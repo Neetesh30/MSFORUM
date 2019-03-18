@@ -1,45 +1,22 @@
 <?php get_header(); ?>
 
-
-<div class="container">
-	
-	<div class="col-xs-12 col-sm-8">
-		
-		<?php 
-		
-		if( have_posts() ):
-			
-			while( have_posts() ): the_post(); ?>
-				
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				
-					<?php the_title('<h1 class="entry-title">','</h1>' ); ?>
-					
-					<?php if( has_post_thumbnail() ): ?>
-						
-						<div class="pull-right"><?php the_post_thumbnail('thumbnail'); ?></div>
-				
-					<?php endif; ?>
-					
-					<small>Category : <?php the_category(' ');  ?></small>
-					
-					<?php the_content(); ?>
-					
-					
-					
-				
-				</article>
-
-			<?php endwhile;
-			
-		endif;
-				
-		?>
-	
-	</div>
-	
-
-	
-</div>
+<div class="container pt-5 pb-6">
+    <h1><?php the_title(); ?></h1>
+    
+    <?php  if(has_post_thumbnail()):?>
+    
+    <img src="<?php the_post_thumbnail_url('largest');?>" class="img-fluid">
+    
+    <?php endif; ?>
+    
+    
+    <?php  if(have_posts()) : while(have_posts()) : the_post(); ?>
+    
+    <?php the_content();?> 
+    
+    <?php endwhile; endif;?>
+    
+    </div>
 
 <?php get_footer(); ?>
+
