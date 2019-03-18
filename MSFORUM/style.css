@@ -4,6 +4,8 @@ Theme Name: MYFORUM
 Author: NEETESH SINGH
 
 */
+*{margin:0; padding:0;}
+ul, li{list-style:none;} a{text-decoration:none;}
 
 body{
 	
@@ -14,5 +16,8 @@ body{
 header{
     background:#FFFFFF;
     width:100%;
-    height:100px;
-}
+    
+} footer{background:#fff; padding-top:30px;}
+footer .menu li{float:none;}
+
+.menu li{float:right;padding:10px 20px;}
